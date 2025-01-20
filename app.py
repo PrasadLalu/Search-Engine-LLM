@@ -58,7 +58,8 @@ if prompt := st.chat_input("What is machine learning?"):
     search_agent = initialize_agent(llm=llm, tools=tools, 
                                     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, 
                                     handling_parsing_errors=True)
-    
+
+    # Search query
     with st.chat_message("assistant"):
         st_cb=StreamlitCallbackHandler(st.container(),expand_new_thoughts=False)
         response=search_agent.run(st.session_state.messages,callbacks=[st_cb])
