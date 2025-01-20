@@ -19,7 +19,6 @@ st.sidebar.title("Settings")
 groq_api_key = st.sidebar.text_input("Enter Groq API Key", type="password")
 if not groq_api_key:
     st.error("Please enter Groq API Key.")
-    st.stop()
 
 # Wikipedia
 wikipedia_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=250)
